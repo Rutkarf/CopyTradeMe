@@ -1,0 +1,89 @@
+/* Style général du conteneur */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Assurez-vous que le corps occupe toute la hauteur */
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Hauteur totale de la fenêtre du navigateur */
+    overflow: hidden; /* Évite les barres de défilement */
+}
+
+/* Bloc pour Three.js à gauche avec marge */
+#three-container {
+    width: 100vh; /* Largeur ajustée en tenant compte de la marge */
+    height: 100%; /* Hauteur complète du conteneur */
+    background-color: #1c1c1c;
+    box-sizing: border-box; /* Inclut les bordures et le padding dans les dimensions */
+    
+}
+
+/* Bloc pour le contenu à droite */
+#content-container {
+    position: relative;
+    width: 50%; /* Largeur du conteneur de contenu */
+    height: 100%; /* Hauteur complète du conteneur */
+    background-color: black; /* Fond noir */
+    color: white; /* Texte en blanc */
+    border-left: 1px solid #333; /* Séparation avec le bloc Three.js */
+    overflow: hidden; /* Évite le débordement du contenu */
+    padding: 20px; /* Espacement intérieur */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Ombre portée lumineuse */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: center; /* Centre les éléments verticalement */
+}
+
+/* Style pour le titre principal */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem; /* Taille de police du titre */
+    color: #00e0ff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.75); /* Ombre portée pour effet néon */
+    margin-bottom: 1rem; /* Espacement sous le titre */
+    position: relative;
+    z-index: 1; /* Au-dessus de l'arrière-plan */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transitions douces */
+    margin-top: 10%; /* Décale le titre vers le bas pour éviter la superposition */
+}
+
+h1:hover {
+    color: #ff007c;
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+/* Style pour les paragraphes */
+h5 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem; /* Taille de police du texte */
+    color: #e0e0e0;
+    line-height: 1.6; /* Espacement des lignes */
+    margin-bottom: 1rem; /* Espacement sous les paragraphes */
+    position: relative;
+    z-index: 1; /* Au-dessus de l'arrière-plan */
+    transition: color 0.3s ease-in-out; /* Transition douce pour la couleur */
+    text-align: center; /* Centre le texte horizontalement */
+}
+
+h5:hover {
+    color: #00e0ff; /* Changement de couleur au survol */
+}
+
+/* Effet de survol des paragraphes */
+h5::before {
+    content: '>';
+    position: absolute;
+    left: -30px;
+    color: #00e0ff;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+h5:hover::before {
+    opacity: 1;
+}

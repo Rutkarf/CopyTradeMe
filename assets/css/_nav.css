@@ -1,0 +1,162 @@
+/* C:\laragon\www\Portfolio2\assets\css\_nav.css */
+
+/* Styles de la barre de navigation cyberpunk */
+.navbar-custom {
+    border: none;
+    box-shadow: 0 2px 7.5px rgba(0, 255, 255, 0.4);
+    background-color: #262626;
+    border-bottom: 3px solid #00e0ff;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    align-items: center;
+    height: 5vh; /* Hauteur fixée à 8% de la hauteur de l'écran */
+    position: fixed; /* Position fixe */
+    top: 0; /* Fixée en haut de l'écran */
+    width: 100%; /* Prend toute la largeur de l'écran */
+    z-index: 1000; /* Assure qu'elle reste au-dessus des autres éléments */
+}
+
+/* Conteneur pour le contenu de la barre de navigation */
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Assure un espace égal entre les éléments */
+    width: 100%;
+}
+
+/* Nom et Prénom */
+.navbar-brand {
+    color: #ff007c;
+    font-size: 1.2rem; /* Réduit la taille de la police */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Réduit l'espacement des lettres */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Open For Inquiries */
+h3 {
+    color: #00e0ff;
+    font-size: 1.2rem; /* Réduit la taille de la police */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Réduit l'espacement des lettres */
+    transition: color 0.3s ease-in-out;
+    margin: 0 auto; /* Centre le h3 entre les deux autres éléments */
+}
+
+/* Conteneur des icônes sociales */
+.navbar-socials {
+    display: flex;
+    justify-content: flex-end; /* Aligne les icônes sociales à droite */
+    gap: 10px; /* Espacement entre les icônes */
+    margin-right: 20px; /* Ajoute un espace à droite du conteneur */
+}
+
+
+/* Icônes sociales */
+.social-link {
+    color: #00ff00;
+    font-size: 1.2rem; /* Réduit la taille des icônes */
+    transition: color 0.3s, transform 0.3s ease-in-out;
+    position: relative;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+}
+
+.social-link:hover {
+    color: #ff007c;
+    transform: scale(1.1); /* Réduit l'échelle de zoom au survol */
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff007c, #00e0ff, #00ff00, #ffeb3b);
+    z-index: -1;
+    filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.social-link:hover::before {
+    opacity: 1;
+}
+
+/* Effet de curseur clignotant */
+.blinking-cursor {
+    font-weight: bold;
+    font-size: 1.2rem; /* Adapte la taille du curseur pour correspondre au texte */
+    color: #00e0ff; /* Même couleur que le texte pour un effet cohérent */
+    animation: blink 1s step-start infinite; /* Animation clignotante */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Effet néon et animation de balancement */
+.animated-text {
+    color: #00e0ff; /* Couleur de base */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    animation: swing 2s ease-in-out infinite, neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Animation de balancement */
+@keyframes swing {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Balance le texte de 10px à droite */
+    }
+}
+
+/* Effet néon clignotant */
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff, 0 0 15px #00e0ff, 0 0 20px #ff007c, 0 0 30px #ff007c, 0 0 40px #ff007c, 0 0 55px #ff007c;
+        color: #00e0ff;
+    }
+    100% {
+        text-shadow: 0 0 10px #ff007c, 0 0 20px #ff007c, 0 0 30px #ff007c, 0 0 40px #ff007c, 0 0 55px #00e0ff, 0 0 75px #00e0ff;
+        color: #ff007c;
+    }
+}
+
+/* Flèches clignotantes */
+.animated-text::before, .animated-text::after {
+    content: "<------";
+    color: #ff007c;
+    position: absolute;
+    animation: blink 1.5s step-start infinite;
+}
+
+.animated-text::after {
+    content: "------>";
+    right: -100px; /* Ajuste selon la longueur de votre texte */
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

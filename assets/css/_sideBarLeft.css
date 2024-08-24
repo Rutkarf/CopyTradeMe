@@ -1,0 +1,108 @@
+/* C:\laragon\www\Portfolio2\assets\css\_sideBarLeft.css */
+
+/* Styles pour la sidebar */
+#sidebar-controls {
+    position: fixed;
+    top: 6vw;
+    left: 0;
+    width: 8vw; /* Largeur de la sidebar */
+    height: 70vh; /* Hauteur fixée à 83% de la hauteur de l'écran */
+    background-color: rgba(38, 38, 38, 0.8);
+    border-right: 3px solid #00e0ff;
+    box-shadow: 2px 0 10px rgba(0, 255, 255, 0.4);
+    padding: 8px 0; /* Padding vertical ajusté pour compenser l’espacement entre les boutons */
+    overflow: hidden; /* Cache tout dépassement pour éviter le défilement */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espacement entre le premier et le dernier bouton */
+}
+
+/* Organisation des boutons autour du modèle 3D */
+#controls, #rotation-controls, #camera-view-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Réduit l’espacement entre les boutons pour tenir dans la hauteur disponible */
+    margin-top: 0; /* Ajuste la marge supérieure pour aligner les boutons dans l’espace disponible */
+    margin-bottom: 0; /* Ajuste la marge inférieure pour aligner les boutons dans l’espace disponible */
+}
+
+/* Styles pour les boutons dans la sidebar */
+.btn-group-vertical .btn {
+    width: 100%;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: background-color 0.3s, transform 0.2s, color 0.3s, box-shadow 0.3s;
+    font-size: 0.5rem; /* Réduit la taille de la police pour s'adapter */
+    padding: 8px; /* Réduit le padding des boutons */
+    
+    border: 2px solid #00e0ff;
+    color: #00e0ff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+}
+
+/* Ajustements spécifiques pour chaque type de bouton */
+.btn-primary {
+    background-color: #0f0f0f;
+    border: 2px solid #00e0ff;
+    color: #00e0ff;
+}
+
+.btn-secondary {
+    background-color: #0f0f0f;
+    border: 2px solid #ff007c;
+    color: #ff007c;
+}
+
+.btn-info {
+    background-color: #0f0f0f;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+}
+
+.btn-warning {
+    background-color: #0f0f0f;
+    border: 2px solid #ffeb3b;
+    color: #ffeb3b;
+}
+
+.btn-success {
+    background-color: #0f0f0f;
+    border: 2px solid #ff007c;
+    color: #ff007c;
+}
+
+/* Effets de survol pour les boutons */
+.btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00ff00, 0 0 25px #ff007c, 0 0 35px #00e0ff;
+    background-color: #1a1a1a; /* Assure que le fond change au survol */
+    color: #fff; /* Change la couleur du texte au survol */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+}
+
+/* Effet au clic */
+.btn:active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #111; /* Change la couleur de fond au clic */
+}
+
+/* Style pour les boutons désactivés */
+.btn:disabled {
+    background-color: #1a1a1a;
+    border-color: #333;
+    color: #555;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Effets de survol supplémentaires pour les boutons */
+#controls .btn:hover,
+#camera-view-controls .btn:hover,
+#rotation-controls .btn:hover {
+    transform: translateY(-2px);
+    background-color: #1a1a1a;
+}
