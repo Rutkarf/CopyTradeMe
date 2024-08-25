@@ -1,21 +1,30 @@
+/* assets\css\_footer.css
+
+Styles pour le footer */
 /* Styles pour le footer */
 .footer-custom {
     font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(45deg, #262626, #333);
-    border-top: 3px solid #00e0ff;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5vh;
-    position: fixed;
+    justify-content: space-between; /* Espacement égal entre les éléments */
+    align-items: center; /* Aligne les éléments verticalement */
+    height: 4vh; /* Hauteur du footer */
+    position: fixed; /* Fixe le footer au bas de la page */
     bottom: 0;
     width: 100%;
     z-index: 1000;
     overflow: hidden;
+    color: #fd5794; /* Couleur du texte */
+    padding: 0 10px; /* Ajoute un peu d'espace à gauche et à droite */
 }
 
+.footer-custom div {
+    flex: 1; /* Les éléments prennent une largeur égale */
+    text-align: center; /* Centre le texte dans chaque élément */
+}
+
+
 p {
-    color: #00ff7f;
+    color: #fab4de95;
     text-align: center;
     font-size: 1rem;
     text-shadow: 0 0 8px rgba(0, 255, 127, 0.75), 0 0 12px rgba(0, 255, 127, 0.5);

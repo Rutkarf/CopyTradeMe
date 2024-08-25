@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Three.js is working!');
 
     // Crée une caméra
-    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000); // Ratio initial est 1
+    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
     camera.position.z = 10;
 
     // Crée un moteur de rendu
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Crée le loader pour les fichiers STL
     const loader = new STLLoader();
+    let mesh;
 
     // Charger le fichier STL principal
     loader.load(
@@ -40,9 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         function (geometry) {
             console.log('STL principal chargé:', geometry);
             const material = new THREE.MeshStandardMaterial({ color: 0xff0000 });
-            const mesh = new THREE.Mesh(geometry, material);
-            mesh.scale.set(0.1, 0.1, 0.1); // Ajustez l'échelle
-            mesh.position.set(0, 0, 0); // Positionnez au centre
+            mesh = new THREE.Mesh(geometry, material);
+            mesh.scale.set(0.075, 0.075, 0.075);
+            mesh.position.set(0, 0, 0);
             scene.add(mesh);
         },
         function (xhr) {
@@ -53,8 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     );
 
+    // Charger la texture de fond
+    const textureLoader = new THREE.TextureLoader();
+    const backgroundTexture = textureLoader.load('/portfolio2/assets/picture/texture/7172.jpg');
+
+    // Modifier l'opacité du fond
+    const backgroundMaterial = new THREE.MeshBasicMaterial({
+        map: backgroundTexture,
+        transparent: true,
+        opacity: 0.000001
+    });
+    const backgroundPlane = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), backgroundMaterial);
+    backgroundPlane.position.z = -1;
+    scene.add(backgroundPlane);
+
     // Créer un système de particules avec BufferGeometry et des couleurs cyberpunk
-    const particlesCount = 500; // Nombre de particules
+    const particlesCount = 500;
     const particlesGeometry = new THREE.BufferGeometry();
     const particlePositions = new Float32Array(particlesCount * 3);
     const particleColors = new Float32Array(particlesCount * 3);
@@ -66,57 +82,69 @@ document.addEventListener('DOMContentLoaded', () => {
         particlePositions[i * 3 + 2] = (Math.random() - 0.5) * 20;
 
         // Couleurs cyberpunk chromées
-        const color = new THREE.Color().setHSL(Math.random(), 1, 0.5); // Couleur vive avec teinte aléatoire
+        const color = new THREE.Color().setHSL(Math.random(), 1, 0.5);
         particleColors[i * 3] = color.r;
         particleColors[i * 3 + 1] = color.g;
         particleColors[i * 3 + 2] = color.b;
     }
 
     // Charger la texture de particules
-    const textureLoader = new THREE.TextureLoader();
-    const particleTexture = textureLoader.load('/portfolio2/assets/picture/GoldTexture.jpg'); // Chemin vers votre texture de particule
+    const particleTexture = textureLoader.load('/Portfolio2/assets/picture/texture/9641044.jpg');
 
     // Matériau de particules avec texture et effet néon
     const particlesMaterial = new THREE.PointsMaterial({
-        size: 0.2, // Taille des particules
-        map: particleTexture, // Appliquer la texture
-        vertexColors: true, // Utiliser les couleurs par vertex
+        size: 0.1,
+        map: particleTexture,
+        vertexColors: true,
         transparent: true,
-        opacity: 0.8, // Opacité des particules
+        opacity: 0.8,
         depthTest: false,
-        blending: THREE.AdditiveBlending, // Effet de néon
-        emissive: new THREE.Color(0xffffff), // Couleur d'émission
-        emissiveIntensity: 1 // Intensité de l'émission
+        blending: THREE.AdditiveBlending,
+        color: 0xffffff,
     });
 
     const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particles);
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
     particlesGeometry.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));
+    scene.add(particles);
+
+    // Initialisation des OrbitControls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
 
     // Fonction d'animation
     function animate() {
         requestAnimationFrame(animate);
 
-        // Rotation continue des particules
-        if (particles) {
-            particles.rotation.y += 0.001;
+        if (mesh) {
+            mesh.rotation.y += 0.05;
         }
 
-        // Redimensionner le canevas si la fenêtre change de taille
-        resizeRendererToDisplaySize();
+        if (particles) {
+            particles.rotation.x += 0.01;
+            particles.rotation.y += 0.01;
+        }
 
+        // Déplacement de la texture de fond
+        if (backgroundTexture) {
+            backgroundTexture.offset.x += 0.01; // Déplace la texture horizontalement
+            backgroundTexture.offset.y += 0.01; // Déplace la texture verticalement
+        }
+
+        // Mise à jour des contrôles
+        controls.update();
+
+        resizeRendererToDisplaySize();
         renderer.render(scene, camera);
     }
 
     animate();
 
-    // Valeurs initiales pour la caméra
-    const initialCameraPosition = { x: 0, y: 0, z: 10 };
-
+    
     // Gestion du bouton "Réinitialiser"
     document.getElementById('resetCamera').addEventListener('click', () => {
-        camera.position.set(initialCameraPosition.x, initialCameraPosition.y, initialCameraPosition.z);
+        camera.position.set(0, 0, 10);
     });
 
     // Déplacement avec la souris
@@ -133,12 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('mousemove', (event) => {
-        if (isDragging) {
+        if (isDragging && mesh) {
             const deltaX = event.clientX - previousMousePosition.x;
             const deltaY = event.clientY - previousMousePosition.y;
 
-            camera.position.x -= deltaX * 0.01; // Ajustez la sensibilité selon vos besoins
-            camera.position.y += deltaY * 0.01; // Ajustez la sensibilité selon vos besoins
+            mesh.rotation.y += deltaX * 0.01;
+            mesh.rotation.x += deltaY * 0.01;
 
             previousMousePosition = { x: event.clientX, y: event.clientY };
         }
@@ -146,30 +174,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Zoom avec la molette de la souris
     document.addEventListener('wheel', (event) => {
-        camera.position.z += event.deltaY * 0.01; // Ajustez la sensibilité selon vos besoins
+        camera.position.z += event.deltaY * 0.01;
     });
 
     // Gestion des contrôles de rotation
     document.getElementById('rotateX').addEventListener('click', () => {
-        if (particles) particles.rotation.x += Math.PI / 16; // Rotation de 11.25 degrés
+        if (mesh) mesh.rotation.x += Math.PI / 16;
     });
 
     document.getElementById('rotateY').addEventListener('click', () => {
-        if (particles) particles.rotation.y += Math.PI / 16; // Rotation de 11.25 degrés
+        if (mesh) mesh.rotation.y += Math.PI / 16;
     });
 
     document.getElementById('rotateZ').addEventListener('click', () => {
-        if (particles) particles.rotation.z += Math.PI / 16; // Rotation de 11.25 degrés
+        if (mesh) mesh.rotation.z += Math.PI / 16;
     });
 
     document.getElementById('changeColor').addEventListener('click', () => {
-        if (particles) {
+        if (mesh) {
             const color = new THREE.Color(Math.random(), Math.random(), Math.random());
-            particles.material.color.set(color);
+            mesh.material.color.set(color);
         }
     });
 
-    let ambientLight = new THREE.AmbientLight(0x404040); // Lumière ambiante par défaut
+    let ambientLight = new THREE.AmbientLight(0x404040);
     let ambientLightEnabled = false;
 
     document.getElementById('toggleAmbientLight').addEventListener('click', () => {
@@ -184,19 +212,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let useLambert = true;
 
     document.getElementById('changeMaterial').addEventListener('click', () => {
-        if (particles) {
+        if (mesh) {
             const material = useLambert 
-                ? new THREE.MeshStandardMaterial({ color: particles.material.color })
-                : new THREE.MeshLambertMaterial({ color: particles.material.color });
+                ? new THREE.MeshStandardMaterial({ color: mesh.material.color })
+                : new THREE.MeshLambertMaterial({ color: mesh.material.color });
             
-            particles.material = material;
+            mesh.material = material;
             useLambert = !useLambert;
         }
     });
 
     let fogEnabled = false;
-    const fogColor = 0x000000; // Couleur du brouillard (noir par défaut)
-    const fogDensity = 0.1; // Densité du brouillard
+    const fogColor = 0x000000;
+    const fogDensity = 0.1;
 
     document.getElementById('toggleFog').addEventListener('click', () => {
         if (fogEnabled) {
@@ -224,31 +252,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Zoom In
     document.getElementById('zoomIn').addEventListener('click', () => {
-        camera.position.z -= 1; // Zoomer avant
+        camera.position.z -= 1;
     });
 
     // Zoom Out
     document.getElementById('zoomOut').addEventListener('click', () => {
-        camera.position.z += 1; // Dézoomer arrière
+        camera.position.z += 1;
     });
 
     // Déplacement de la caméra
     document.getElementById('moveUp').addEventListener('click', () => {
-        camera.position.y += 1; // Déplacer la caméra vers le haut
+        camera.position.y += 1;
     });
 
     document.getElementById('moveDown').addEventListener('click', () => {
-        camera.position.y -= 1; // Déplacer la caméra vers le bas
+        camera.position.y -= 1;
     });
 
     document.getElementById('moveLeft').addEventListener('click', () => {
-        camera.position.x -= 1; // Déplacer la caméra vers la gauche
+        camera.position.x -= 1;
     });
 
     document.getElementById('moveRight').addEventListener('click', () => {
-        camera.position.x += 1; // Déplacer la caméra vers la droite
+        camera.position.x += 1;
     });
 
     // Redimensionnement de la fenêtre
     window.addEventListener('resize', resizeRendererToDisplaySize);
+
+    // Gestion de la rotation des particules
+    document.getElementById('rotateX').addEventListener('click', () => {
+        if (particles) particles.rotation.x += Math.PI / 16;
+    });
+
+    document.getElementById('rotateY').addEventListener('click', () => {
+        if (particles) particles.rotation.y += Math.PI / 16;
+    });
+
+    document.getElementById('rotateZ').addEventListener('click', () => {
+        if (particles) particles.rotation.z += Math.PI / 16;
+    });
+
+    document.getElementById('changeColor').addEventListener('click', () => {
+        if (particles) {
+            const color = new THREE.Color(Math.random(), Math.random(), Math.random());
+            particlesMaterial.color.set(color);
+        }
+    });
 });

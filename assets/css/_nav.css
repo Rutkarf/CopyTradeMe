@@ -9,7 +9,7 @@
     font-family: 'Orbitron', sans-serif;
     display: flex;
     align-items: center;
-    height: 5vh; /* Hauteur fixée à 8% de la hauteur de l'écran */
+    height: 5vh; /* Hauteur fixée à 5% de la hauteur de l'écran */
     position: fixed; /* Position fixe */
     top: 0; /* Fixée en haut de l'écran */
     width: 100%; /* Prend toute la largeur de l'écran */
@@ -106,6 +106,88 @@ h3 {
     }
 }
 
+/* Style de base pour le bouton */
+#downloadCV {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    color: #fff;
+    background: linear-gradient(145deg, #1d1d1d, #333);
+    border: 2px solid #fd5794;
+    border-radius: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Style de texte du bouton */
+#downloadCV::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 20%, transparent 80%);
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0;
+}
+
+/* Effet de survol */
+#downloadCV:hover {
+    background: linear-gradient(145deg, #333, #1d1d1d);
+    border-color: #ff0099;
+    box-shadow: 0 0 15px rgba(255, 0, 153, 0.5);
+}
+
+#downloadCV:hover::before {
+    opacity: 1;
+}
+
+/* Style du texte à l'intérieur du bouton */
+#downloadCV span {
+    position: relative;
+    z-index: 1;
+}
+/* Effet néon et animation de balancement */
+.animated-text1 {
+    color: #00e0ff; /* Couleur de base */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    animation: swing 2s ease-in-out infinite, neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Animation de balancement */
+@keyframes swing {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Balance le texte de 10px à droite */
+    }
+}
+
+/* Effet néon clignotant */
+@keyframes neonGlow {
+    0% {
+        text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff, 0 0 15px #00e0ff, 0 0 20px #ff007c, 0 0 30px #ff007c, 0 0 40px #ff007c, 0 0 55px #ff007c;
+        color: #00e0ff;
+    }
+    100% {
+        text-shadow: 0 0 10px #ff007c, 0 0 20px #ff007c, 0 0 30px #ff007c, 0 0 40px #ff007c, 0 0 55px #00e0ff, 0 0 75px #00e0ff;
+        color: #ff007c;
+    }
+}
+
+
+
+
 /* Effet néon et animation de balancement */
 .animated-text {
     color: #00e0ff; /* Couleur de base */
@@ -141,7 +223,6 @@ h3 {
 
 /* Flèches clignotantes */
 .animated-text::before, .animated-text::after {
-    content: "<------";
     color: #ff007c;
     position: absolute;
     animation: blink 1.5s step-start infinite;
@@ -149,7 +230,7 @@ h3 {
 
 .animated-text::after {
     content: "------>";
-    right: -100px; /* Ajuste selon la longueur de votre texte */
+    left: -100px; /* Ajuste selon la longueur de votre texte */
 }
 
 @keyframes blink {

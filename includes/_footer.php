@@ -1,9 +1,11 @@
 <!-- C:\laragon\www\Portfolio2\includes\_footer.php -->
 <!-- Footer --><br><br>
+<!-- Footer -->
 <footer class="footer-custom">
-   <p class="animated-footer-text">Explore Creation into the W0RLD' of innovative web solutions and artistic development. Embrace the future of LeLobbyHolding Creation with us.</p>
+    <div id="geo-info-container">NASA Localisation...</div>
+    <div id="ip-container">Your IP is: ...</div>
+    <div id="clock-container">Heure actuelle...</div>
 </footer>
-
 
 <!-- Scripts JavaScript -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
