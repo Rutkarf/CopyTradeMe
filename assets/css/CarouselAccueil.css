@@ -1,0 +1,79 @@
+/* assets\css\CarouselAccueil.css */
+/* Container principal du carousel et des miniatures */
+/* Container principal du carousel et des miniatures */
+.carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 70vh; /* 70% de la hauteur de l'écran */
+  margin-top: 40px; /* Ajustez cette valeur pour démarrer juste en dessous de la navbar */
+  padding-top: 20px; /* Ajustez le padding si nécessaire */
+  background-color: #1d1d1d;
+  overflow: hidden; /* Empêche le débordement */
+}
+
+/* Carousel du Hall of Fame (Three.js) */
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75%; /* 75% de la section pour le carousel */
+  background-color: #1d1d1d;
+  overflow: hidden; /* Empêche le débordement */
+}
+
+.carousel-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item canvas {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #282828; /* Pour mieux délimiter le canvas */
+}
+
+/* Section des miniatures */
+.carousel-thumbnail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  gap: 10px;
+  overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+  overflow-y: hidden; /* Cache le débordement vertical */
+}
+
+.thumbnail-card {
+  flex-shrink: 0; /* Empêche la réduction des cartes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.thumbnail.active {
+  border-color: #0077ff;
+}

@@ -3,96 +3,107 @@
 Styles pour le footer */
 /* Styles pour le footer */
 .footer-custom {
-    font-family: 'Orbitron', sans-serif;
-    display: flex;
-    justify-content: space-between; /* Espacement égal entre les éléments */
-    align-items: center; /* Aligne les éléments verticalement */
-    height: 4vh; /* Hauteur du footer */
-    position: fixed; /* Fixe le footer au bas de la page */
-    bottom: 0;
-    width: 100%;
-    z-index: 1000;
-    overflow: hidden;
-    color: #fd5794; /* Couleur du texte */
-    padding: 0 10px; /* Ajoute un peu d'espace à gauche et à droite */
+  font-family: "Orbitron", sans-serif;
+  display: flex;
+  justify-content: space-between; /* Espacement égal entre les éléments */
+  align-items: center; /* Aligne les éléments verticalement */
+  height: 2px; /* Hauteur du footer */
+  position: fixed; /* Fixe le footer au bas de la page */
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  overflow: hidden;
+  color: #fd5794; /* Couleur du texte */
 }
 
 .footer-custom div {
-    flex: 1; /* Les éléments prennent une largeur égale */
-    text-align: center; /* Centre le texte dans chaque élément */
+  flex: 1; /* Les éléments prennent une largeur égale */
+  text-align: center; /* Centre le texte dans chaque élément */
 }
 
-
 p {
-    color: #fab4de95;
-    text-align: center;
-    font-size: 1rem;
-    text-shadow: 0 0 8px rgba(0, 255, 127, 0.75), 0 0 12px rgba(0, 255, 127, 0.5);
-    animation: glitch 2s infinite, flicker 3s infinite;
+  color: #fab4de95;
+  text-align: center;
+  font-size: 1rem;
+  text-shadow: 0 0 8px rgba(0, 255, 127, 0.75), 0 0 12px rgba(0, 255, 127, 0.5);
+  animation: glitch 2s infinite, flicker 3s infinite;
 }
 
 /* Animation de Glitch */
 @keyframes glitch {
-    0%, 100% {
-        text-shadow: 0 0 8px rgba(0, 255, 127, 0.75), 0 0 12px rgba(0, 255, 127, 0.5);
-    }
-    20% {
-        text-shadow: -2px 0 8px rgba(255, 0, 0, 0.75), 2px 0 12px rgba(0, 0, 255, 0.5);
-        transform: translateX(-1px);
-    }
-    40% {
-        text-shadow: 2px 0 8px rgba(0, 255, 127, 0.75), -2px 0 12px rgba(0, 255, 127, 0.5);
-        transform: translateX(1px);
-    }
-    60% {
-        text-shadow: -2px 0 8px rgba(255, 255, 0, 0.75), 2px 0 12px rgba(0, 255, 255, 0.5);
-        transform: translateX(-1px);
-    }
-    80% {
-        text-shadow: 2px 0 8px rgba(0, 255, 127, 0.75), -2px 0 12px rgba(0, 255, 127, 0.5);
-        transform: translateX(1px);
-    }
+  0%,
+  100% {
+    text-shadow: 0 0 8px rgba(0, 255, 127, 0.75),
+      0 0 12px rgba(0, 255, 127, 0.5);
+  }
+  20% {
+    text-shadow: -2px 0 8px rgba(255, 0, 0, 0.75),
+      2px 0 12px rgba(0, 0, 255, 0.5);
+    transform: translateX(-1px);
+  }
+  40% {
+    text-shadow: 2px 0 8px rgba(0, 255, 127, 0.75),
+      -2px 0 12px rgba(0, 255, 127, 0.5);
+    transform: translateX(1px);
+  }
+  60% {
+    text-shadow: -2px 0 8px rgba(255, 255, 0, 0.75),
+      2px 0 12px rgba(0, 255, 255, 0.5);
+    transform: translateX(-1px);
+  }
+  80% {
+    text-shadow: 2px 0 8px rgba(0, 255, 127, 0.75),
+      -2px 0 12px rgba(0, 255, 127, 0.5);
+    transform: translateX(1px);
+  }
 }
 
 /* Animation de Scintillement */
 @keyframes flicker {
-    0%, 100% {
-        opacity: 1;
-    }
-    5%, 95% {
-        opacity: 0.9;
-    }
-    10%, 90% {
-        opacity: 0.8;
-    }
-    15%, 85% {
-        opacity: 1;
-    }
-    20%, 80% {
-        opacity: 0.9;
-    }
-    25%, 75% {
-        opacity: 0.7;
-    }
-    30%, 70% {
-        opacity: 1;
-    }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  5%,
+  95% {
+    opacity: 0.9;
+  }
+  10%,
+  90% {
+    opacity: 0.8;
+  }
+  15%,
+  85% {
+    opacity: 1;
+  }
+  20%,
+  80% {
+    opacity: 0.9;
+  }
+  25%,
+  75% {
+    opacity: 0.7;
+  }
+  30%,
+  70% {
+    opacity: 1;
+  }
 }
 
 /* Animation du Gradient */
 .footer-custom {
-    background-size: 400% 400%;
-    animation: gradientShift 10s ease infinite;
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
 }
 
 @keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

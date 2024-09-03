@@ -4,11 +4,13 @@
     <nav class="navbar navbar-expand-lg navbar-custom no-margin">
         <div class="navbar-content">
             <!-- Nom et prénom à gauche -->
-            <a class="navbar-brand" href="#">#Fraktur611<span class="blinking-cursor">|</span></a>
-            
-            
+            <p class="animated-text">
+                <a class="navbar-brand" href="#">#BookMe*B!tch</a>
+            </p>
+
             <!-- Conteneur pour les icônes de réseaux sociaux -->
             <div class="navbar-socials">
+                <!-- Les icônes de réseaux sociaux -->
                 <a href="https://www.facebook.com" class="social-link" target="_blank">
                     <i class="fab fa-facebook"></i>
                 </a>
@@ -37,33 +39,15 @@
                     <i class="fab fa-reddit"></i>
                 </a>
                 <a href="https://www.snapchat.com" class="social-link" target="_blank">
-                    <i class="fab fa-snapchat"></i>                    
+                    <i class="fab fa-snapchat"></i>
                 </a>
-            </div> 
-            <p class="animated-text">
-            <button id="downloadCV">Take My Cv</button>
-        </p>
-             <!-- Votre script JavaScript -->
-    <script>
-        document.getElementById('downloadCV').addEventListener('click', () => {
-            // Chemin vers le fichier que vous souhaitez que les utilisateurs téléchargent
-            const fileUrl = './assets/Cv/CVBouazzaRomain.jpg';
+            </div>
 
-            // Créer un élément <a> temporaire
-            const a = document.createElement('a');
-            a.href = fileUrl;
-            a.download = 'CVBouazzaRomain.jpg'; // Nom du fichier téléchargé
-
-            // Ajouter l'élément <a> au DOM et déclencher le téléchargement
-            document.body.appendChild(a);
-            a.click();
-            
-            // Supprimer l'élément <a> du DOM
-            document.body.removeChild(a);
-        });
-    </script>
-        </div>  
+            <!-- Conteneur pour les boutons -->
+            <div class="navbar-buttons">
+                <button class="btn btn-primary">Sign Up</button>
+                <button class="btn btn-secondary">Sign In</button>
+            </div>
+        </div>
     </nav>
 </header>
-
-
