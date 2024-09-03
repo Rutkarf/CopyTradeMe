@@ -1,3 +1,5 @@
+/* assets\css\styles.css */
+
 /* Réinitialisation des marges et des paddings par défaut */
 * {
   margin: 0;
@@ -6,14 +8,148 @@
 }
 
 body {
-  
-    margin: 3vh;
-    padding: 1vh;
-    box-sizing: border-box;
+  margin: 3vh;
+  padding: 1vh;
+  box-sizing: border-box;
+  background-color: Black;
 }
 
 main {
-margin: 1vh;
-padding:1vh;
-box-sizing: border-box;
+  margin: 1vh;
+  padding: 1vh;
+  box-sizing: border-box;
+}
+
+
+
+/* Styles généraux pour h1 et h4 */
+h1, h4 {
+  font-family: 'Orbitron', sans-serif; /* Font futuriste */
+  text-align: center;
+  margin: 10px 0;
+  color: #ffffff; /* Couleur de texte blanche par défaut */
+}
+
+/* Styles pour le <h1> */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99; /* Effet néon */
+  background: rgba(0, 0, 0, 0.4); /* Fond semi-transparent pour glassmorphism */
+  backdrop-filter: blur(15px); /* Flou d'arrière-plan pour glassmorphism */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure semi-transparente */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Ombre néon */
+  animation: pulse 2s infinite; /* Animation de pulsation */
+}
+
+/* Styles pour le <h4> */
+h4 {
+  font-size: 1rem;
+  font-weight: normal;
+  text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 15px #ff0099; /* Effet néon */
+  background: rgba(0, 0, 0, 0.3); /* Fond semi-transparent pour glassmorphism */
+  backdrop-filter: blur(8px); /* Flou d'arrière-plan pour glassmorphism */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure semi-transparente */
+  box-shadow: 0 0 10px rgba(255, 0, 150, 0.5); /* Ombre néon */
+  animation: flicker 1.5s infinite; /* Animation de scintillement */
+}
+
+/* Styles pour le <h4> */
+h5 {
+  font-size: 1rem;
+  font-weight: normal;
+  text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 15px #ff0099; /* Effet néon */
+  background: rgba(0, 0, 0, 0.3); /* Fond semi-transparent pour glassmorphism */
+  backdrop-filter: blur(8px); /* Flou d'arrière-plan pour glassmorphism */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure semi-transparente */
+  box-shadow: 0 0 10px rgba(255, 0, 150, 0.5); /* Ombre néon */
+  animation: flicker 1.5s infinite; /* Animation de scintillement */
+}
+/* Optionnel : Styles pour centrer le texte */
+h1, h4, h5 {
+  font-family: 'Orbitron', sans-serif; /* Font futuriste */
+  text-align: center;
+  margin: 10px 0;
+  color: #ffffff; /* Couleur de texte blanche par défaut */
+}
+
+
+
+body {
+  margin: 3vh;
+  padding: 1vh;
+  box-sizing: border-box;
+  background-color: Black;
+}
+
+/* Glassmorphism */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.glassmorphism-bordered {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Cyberpunk */
+.cyberpunk-text {
+  color: #00ff99;
+  font-family: "Orbitron", sans-serif;
+}
+
+.cyberpunk-background {
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.neon-text {
+  text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 15px #00ff99,
+    0 0 20px #00ff99, 0 0 25px #00ff99;
+  font-family: "Orbitron", sans-serif;
+}
+
+
+/* Animation de pulsation pour <h1> */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99;
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99, 0 0 50px #00ff99;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99;
+  }
+}
+
+/* Animation de scintillement pour <h4> */
+@keyframes flicker {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 15px #ff0099;
+  }
+  50% {
+    opacity: 0.5;
+    text-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 30px #ff0099;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 15px #ff0099;
+  }
 }

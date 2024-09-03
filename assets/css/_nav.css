@@ -1,4 +1,4 @@
-/* C:\laragon\www\Portfolio2\assets\css\_nav.css */
+/* C:\laragon\www\CopyTradeMe\assets\css\_nav.css */
 
 /* Styles de la barre de navigation cyberpunk */
 /* Styles de la barre de navigation cyberpunk */
@@ -16,6 +16,7 @@
   top: 0; /* Fixée en haut de l'écran */
   width: 100%; /* Prend toute la largeur de l'écran */
   z-index: 1000; /* Au-dessus des autres éléments */
+  
 }
 
 .navbar-content {

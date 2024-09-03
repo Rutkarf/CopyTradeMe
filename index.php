@@ -11,14 +11,21 @@ include "includes/_head.php";
     include "includes/_nav.php";
     ?>
     
-<?php
-include "includes/_accueilTOP.php";
+    <main>
+
+
+    <?php
+include "includes/_accueilTitre.php";
 ?>
 
 
- <main>
+<?php
+include "includes/_accueilHOF.php";
+?>
     
-        
+    <?php
+include "includes/_BmbPresentation.php";
+?>  
     </main> 
 
     <?php

@@ -6,8 +6,7 @@
 
 
 </footer>
-
-
+</main>
 </body>
 
 </html>

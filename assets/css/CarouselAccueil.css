@@ -1,4 +1,5 @@
-/* assets\css\CarouselAccueil.css */
+/* assets/css/CarouselAccueil.css */
+
 /* Container principal du carousel et des miniatures */
 /* Container principal du carousel et des miniatures */
 .carousel-wrapper {
@@ -6,22 +7,39 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 70vh; /* 70% de la hauteur de l'écran */
-  margin-top: 40px; /* Ajustez cette valeur pour démarrer juste en dessous de la navbar */
-  padding-top: 20px; /* Ajustez le padding si nécessaire */
-  background-color: #1d1d1d;
+  height: 45vh; /* 35% de la hauteur de l'écran */
+  margin-top: 60px; /* Ajuster pour la hauteur de la navbar */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fond semi-transparent pour glassmorphism */
+  backdrop-filter: blur(10px); /* Flou d'arrière-plan pour glassmorphism */
+  border-radius: 15px; /* Coins arrondis */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure semi-transparente */
   overflow: hidden; /* Empêche le débordement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
 }
 
-/* Carousel du Hall of Fame (Three.js) */
+/* Carousel Hall of Fame (Three.js) */
 .carousel-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 75%; /* 75% de la section pour le carousel */
-  background-color: #1d1d1d;
+  height: 80%; /* 75% de la section pour le carousel */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fond semi-transparent pour glassmorphism */
+  backdrop-filter: blur(10px); /* Flou d'arrière-plan pour glassmorphism */
+  border-radius: 15px; /* Coins arrondis */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure semi-transparente */
   overflow: hidden; /* Empêche le débordement */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
 }
 
 .carousel-inner {
@@ -41,7 +59,8 @@
 .carousel-item canvas {
   width: 100%;
   height: 100%;
-  border: 2px solid #282828; /* Pour mieux délimiter le canvas */
+  border: 2px solid #00ff99; /* Bordure néon */
+  box-shadow: 0 0 10px #00ff99; /* Ombre néon pour canvas */
 }
 
 /* Section des miniatures */
@@ -54,6 +73,16 @@
   gap: 10px;
   overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
   overflow-y: hidden; /* Cache le débordement vertical */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fond semi-transparent pour glassmorphism */
+  backdrop-filter: blur(10px); /* Flou d'arrière-plan pour glassmorphism */
+  border-radius: 15px; /* Coins arrondis */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure semi-transparente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
 }
 
 .thumbnail-card {
@@ -62,7 +91,14 @@
   justify-content: center;
   align-items: center;
   border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée pour les cartes */
+  border-radius: 10px; /* Coins arrondis */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition pour effet de survol */
+}
+
+.thumbnail-card:hover {
+  transform: scale(1.05); /* Agrandissement au survol */
+  box-shadow: 0 6px 12px rgba(0, 255, 255, 0.5); /* Ombre néon au survol */
 }
 
 .thumbnail {
@@ -71,9 +107,10 @@
   object-fit: cover;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: border 0.3s;
+  transition: border 0.3s, transform 0.3s; /* Transition pour effet de survol */
 }
 
 .thumbnail.active {
-  border-color: #0077ff;
+  border-color: #00ff99; /* Bordure néon */
+  transform: scale(1.1); /* Agrandissement pour la vignette active */
 }

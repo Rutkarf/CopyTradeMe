@@ -21,14 +21,6 @@ Styles pour le footer */
   text-align: center; /* Centre le texte dans chaque élément */
 }
 
-p {
-  color: #fab4de95;
-  text-align: center;
-  font-size: 1rem;
-  text-shadow: 0 0 8px rgba(0, 255, 127, 0.75), 0 0 12px rgba(0, 255, 127, 0.5);
-  animation: glitch 2s infinite, flicker 3s infinite;
-}
-
 /* Animation de Glitch */
 @keyframes glitch {
   0%,
