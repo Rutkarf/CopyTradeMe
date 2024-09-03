@@ -16,7 +16,7 @@ include "includes/_head.php";
 
     <?php
 include "includes/_accueilTitre.php";
-?>
+     ?>
 
 
 <?php
