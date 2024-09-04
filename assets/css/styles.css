@@ -14,14 +14,6 @@ body {
   background-color: Black;
 }
 
-main {
-  margin: 1vh;
-  padding: 1vh;
-  box-sizing: border-box;
-}
-
-
-
 /* Styles généraux pour h1 et h4 */
 h1, h4 {
   font-family: 'Orbitron', sans-serif; /* Font futuriste */
@@ -31,7 +23,7 @@ h1, h4 {
 }
 
 /* Styles pour le <h1> */
-h1 {
+.card-title h1 {
   font-size: 2rem;
   font-weight: bold;
   text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99; /* Effet néon */
@@ -45,7 +37,7 @@ h1 {
 }
 
 /* Styles pour le <h4> */
-h4 {
+.card-subtitle h4 {
   font-size: 1rem;
   font-weight: normal;
   text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 15px #ff0099; /* Effet néon */
@@ -58,8 +50,8 @@ h4 {
   animation: flicker 1.5s infinite; /* Animation de scintillement */
 }
 
-/* Styles pour le <h4> */
-h5 {
+/* Styles pour le <h5> */
+.card-subtitle h5 {
   font-size: 1rem;
   font-weight: normal;
   text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 15px #ff0099; /* Effet néon */
@@ -71,6 +63,7 @@ h5 {
   box-shadow: 0 0 10px rgba(255, 0, 150, 0.5); /* Ombre néon */
   animation: flicker 1.5s infinite; /* Animation de scintillement */
 }
+
 /* Optionnel : Styles pour centrer le texte */
 h1, h4, h5 {
   font-family: 'Orbitron', sans-serif; /* Font futuriste */
@@ -79,17 +72,8 @@ h1, h4, h5 {
   color: #ffffff; /* Couleur de texte blanche par défaut */
 }
 
-
-
-body {
-  margin: 3vh;
-  padding: 1vh;
-  box-sizing: border-box;
-  background-color: Black;
-}
-
 /* Glassmorphism */
-.glassmorphism {
+.card-main {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 10px;
@@ -116,11 +100,9 @@ body {
 }
 
 .neon-text {
-  text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 15px #00ff99,
-    0 0 20px #00ff99, 0 0 25px #00ff99;
+  text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 15px #00ff99, 0 0 20px #00ff99, 0 0 25px #00ff99;
   font-family: "Orbitron", sans-serif;
 }
-
 
 /* Animation de pulsation pour <h1> */
 @keyframes pulse {

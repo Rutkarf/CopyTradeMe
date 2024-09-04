@@ -42,13 +42,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!-- Formulaire de connexion HTML -->
-<form action="login.php" method="POST">
-    <label for="username">Nom d'utilisateur:</label>
-    <input type="text" id="username" name="username" required>
-    <br>
-    <label for="password">Mot de passe:</label>
-    <input type="password" id="password" name="password" required>
-    <br>
-    <button type="submit">Se connecter</button>
-</form>
+
+<?php
+// Inclut l'en-tête du document, avec les balises <head> et les styles CSS
+include "includes/_head.php";
+?>
+
+<body>
+
+    <?php
+    // Inclut la barre de navigation fixe
+    include "includes/_nav.php";
+    ?>
+
+
+    <!-- Formulaire de connexion HTML -->
+    <!-- Container principal pour centrer le contenu -->
+    < <!-- Inclusion de la carte de connexion -->
+    <div class="container-center">
+        <div class="card login-card">
+            <!-- Titre de la carte -->
+            <h5 class="card-title">Connexion</h5>
+            <!-- Formulaire de connexion -->
+            <form class="login-form">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+    </div>

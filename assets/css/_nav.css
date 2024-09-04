@@ -1,10 +1,7 @@
 /* C:\laragon\www\CopyTradeMe\assets\css\_nav.css */
 
-/* Styles de la barre de navigation cyberpunk */
-/* Styles de la barre de navigation cyberpunk */
-/* Styles de la barre de navigation cyberpunk */
-/* Styles de la barre de navigation cyberpunk */
-.navbar-custom {
+/* Carte pour la barre de navigation */
+.navbar-card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,10 +13,10 @@
   top: 0; /* Fixée en haut de l'écran */
   width: 100%; /* Prend toute la largeur de l'écran */
   z-index: 1000; /* Au-dessus des autres éléments */
-  
 }
 
-.navbar-content {
+/* Carte pour le contenu de la barre de navigation */
+.navbar-content-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,7 +26,8 @@
   padding: 0 20px; /* Ajoute du padding pour ne pas coller les bords */
 }
 
-.navbar-brand {
+/* Carte pour la marque de la barre de navigation */
+.navbar-brand-card {
   color: #ff007c;
   font-size: 1.2rem;
   font-weight: bolder;
@@ -37,7 +35,8 @@
   transition: color 0.3s ease-in-out;
 }
 
-.navbar-socials {
+/* Carte pour les icônes de réseaux sociaux */
+.navbar-socials-card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,66 +44,31 @@
   flex: 1; /* Permet de prendre tout l'espace disponible entre la marque et les boutons */
 }
 
-.social-link {
+/* Carte pour les liens sociaux */
+.social-link-card {
   color: #00ff00;
   font-size: 1.2rem; /* Taille des icônes */
   transition: color 0.3s, transform 0.3s ease-in-out;
   text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
 }
 
-.navbar-buttons {
+/* Carte pour les boutons de la barre de navigation */
+.navbar-buttons-card {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 10px; /* Espacement entre les boutons */
 }
 
-
-.social-link:hover {
+/* Effet de survol pour les liens sociaux */
+.social-link-card:hover {
   color: #ff007c;
   transform: scale(1.1); /* Réduit l'échelle de zoom au survol */
 }
 
-.social-link::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #ff007c, #00e0ff, #00ff00, #ffeb3b);
-  z-index: -1;
-  filter: blur(5px);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.social-link:hover::before {
-  opacity: 1;
-}
-
-/* Effet de curseur clignotant */
-.blinking-cursor {
-  font-weight: bold;
-  font-size: 1.2rem; /* Adapte la taille du curseur pour correspondre au texte */
-  color: #00e0ff; /* Même couleur que le texte pour un effet cohérent */
-  animation: blink 1s step-start infinite; /* Animation clignotante */
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Style de base pour le bouton */
-#button {
+/* Carte pour le bouton avec effet néon */
+/* Carte pour le bouton avec effet néon */
+.button-card {
   font-family: "Orbitron", sans-serif;
   font-size: 12px;
   color: #fff;
@@ -115,47 +79,35 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  right: 1vh;
   transition: all 0.3s ease;
 }
 
-/* Style de texte du bouton */
-#button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.2) 20%,
-    transparent 80%
-  );
-  transition: all 0.3s ease;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  opacity: 0;
-}
-
-/* Effet de survol */
-#button:hover {
+/* Effet de survol pour les boutons */
+.button-card:hover {
   background: linear-gradient(145deg, #333, #1d1d1d);
   border-color: #ff0099;
   box-shadow: 0 0 15px rgba(255, 0, 153, 0.5);
 }
 
-#button:hover::before {
-  opacity: 1;
-}
-
-/* Style du texte à l'intérieur du bouton */
-#button span {
+/* Carte pour le texte à l'intérieur du bouton */
+.button-card span {
   position: relative;
   z-index: 1;
 }
-/* Effet néon et animation de balancement */
-.animated-text1 {
+
+/* Styles spécifiques pour les boutons primaires et secondaires */
+.button-primary {
+  background: linear-gradient(145deg, #00e0ff, #007acc);
+  border: 2px solid #007acc;
+}
+
+.button-secondary {
+  background: linear-gradient(145deg, #ff007c, #e6007e);
+  border: 2px solid #e6007e;
+}
+
+/* Carte pour l'effet néon et animation de balancement */
+.animated-text-card {
   color: #00e0ff; /* Couleur de base */
   font-size: 1.2rem;
   font-weight: bold;
@@ -168,8 +120,7 @@
 
 /* Animation de balancement */
 @keyframes swing {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateX(0);
   }
   50% {
@@ -191,28 +142,25 @@
   }
 }
 
-/* Style pour la flèche seule */
-.animated-text {
+/* Carte pour la flèche avec animation */
+.animated-text-flash-card {
   position: relative; /* Nécessaire pour que le positionnement relatif de ::after fonctionne */
   height: 1.2rem; /* Ajuste selon la taille souhaitée */
 }
 
-/* Style de la flèche */
-.animated-text::after {
+/* Carte pour l'effet néon et animation de balancement de la flèche */
+.animated-text-flash-card::after {
   position: absolute; /* Positionnement absolu par rapport à .animated-text */
   color: #ff007c; /* Couleur de la flèche */
   right: 0; /* Positionne la flèche à droite du conteneur parent */
   top: 50%; /* Centrage vertical */
-  transform: translateY(
-    -50%
-  ); /* Ajustement pour centrer parfaitement verticalement */
+  transform: translateY(-50%); /* Ajustement pour centrer parfaitement verticalement */
   animation: blink 1.5s step-start infinite, swing 2s ease-in-out infinite; /* Animations */
 }
 
 /* Animation de clignotement */
 @keyframes blink {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 1;
   }
   50% {
@@ -222,8 +170,7 @@
 
 /* Animation de balancement */
 @keyframes swing {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateX(0) translateY(-50%);
   }
   50% {
@@ -231,35 +178,10 @@
   }
 }
 
-/* Effet néon clignotant */
-@keyframes neonGlow {
-  0% {
-    text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff, 0 0 15px #00e0ff,
-      0 0 20px #ff007c, 0 0 30px #ff007c, 0 0 40px #ff007c, 0 0 55px #ff007c;
-    color: #00e0ff;
-  }
-  100% {
-    text-shadow: 0 0 10px #ff007c, 0 0 20px #ff007c, 0 0 30px #ff007c,
-      0 0 40px #ff007c, 0 0 55px #00e0ff, 0 0 75px #00e0ff;
-    color: #ff007c;
-  }
-}
-
-/* Flèches clignotantes */
-.animated-text::before,
-.animated-text::after {
+/* Effet néon clignotant pour les flèches */
+.animated-text-flash-card::before,
+.animated-text-flash-card::after {
   color: #ff007c;
   position: absolute;
   animation: blink 1.5s step-start infinite;
 }
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-

@@ -1,34 +1,20 @@
 /* Container principal de la présentation */
-.presentation-section {
-  display: flex;
-  align-items: flex-start; /* Aligne les éléments en haut de la ligne */
-  justify-content: space-between; /* Espace entre les éléments */
-  padding: 20px;
-  gap: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombrage pour un effet de profondeur */
-}
-
-/* Style pour les cartes */
+/* Styles pour les cartes de présentation */
 .cardPresentationBmBthree {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombrage pour un effet de profondeur */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Conteneur pour Three.js dans une carte */
 .threejs-card {
-  flex: 0 0 40%; /* Fixe la largeur à 40% */
-  height: 500px; /* Ajustez la hauteur selon vos besoins */
+  flex: 0 0 40%;
+  height: 500px;
   background-color: #1d1d1d;
-  display: flex; /* Assure que le canvas s'ajuste correctement */
-  align-items: center; /* Centre le contenu verticalement */
-  justify-content: center; /* Centre le contenu horizontalement */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .threejs-container {
@@ -42,9 +28,8 @@
   border-radius: 15px;
 }
 
-/* Contenu textuel dans une carte */
 .text-card {
-  flex: 0 0 60%; /* Fixe la largeur à 60% */
+  flex: 0 0 60%;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -52,15 +37,7 @@
 .text-card p {
   font-size: 1em;
   line-height: 1.5;
-  color: #e0e0e0; /* Couleur du texte pour plus de contraste */
+  color: #e0e0e0;
   margin: 0;
 }
-
-.text-card h1 {
-  font-size: 2em;
-  color: #00ff99;
-  margin-bottom: 10px;
-}
-
-
 

@@ -1,0 +1,170 @@
+/* assets/css/login.css */
+
+/* Animation du fond */
+@keyframes background-glow {
+    0% {
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    }
+    50% {
+        background: linear-gradient(135deg, #2b5876, #4e4376);
+    }
+    100% {
+        background: linear-gradient(135deg, #141e30, #243b55);
+    }
+}
+
+/* Animation d'apparition du formulaire */
+@keyframes appear {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation des bordures lumineuses */
+@keyframes glow-border {
+    0% {
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), inset 0 0 15px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 105, 180, 0.9), inset 0 0 30px rgba(255, 105, 180, 0.9);
+    }
+}
+
+/* Animation du texte clignotant */
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0;
+    }
+}
+
+/* Animation de l'effet néon sur les labels */
+@keyframes neon-line {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Animation de l'effet pulsation du bouton */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(255, 0, 255, 0.9);
+    }
+}
+
+/* Styles pour la carte générale */
+.card {
+    display: flex;
+    flex-direction: column; /* Pour aligner le titre au-dessus du formulaire */
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Centrer le titre de la carte */
+.card-title {
+    text-align: center;
+    font-size: 1.5rem; /* Ajuste la taille du titre si nécessaire */
+    margin-bottom: 15px; /* Espace entre le titre et le formulaire */
+    color: #ffffff; /* Couleur du texte */
+}
+
+/* Styles pour le formulaire de connexion */
+.login-form {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    width: 300px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    animation: appear 1.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Effets sur les labels */
+.login-form label {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: block;
+    animation: flicker 2s infinite alternate;
+}
+
+/* Effet néon pour les labels */
+.login-form label::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 0, 255, 0.5), rgba(0, 255, 255, 0.5));
+    animation: neon-line 2s infinite alternate;
+}
+
+/* Styles des inputs avec animation */
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+    transition: border 0.3s;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.login-form input:focus {
+    border: 1px solid #0ff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Styles du bouton avec animation */
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff0099, #493240);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    animation: pulse 1.5s infinite;
+}
+
+.login-form button:hover {
+    background: linear-gradient(45deg, #6b00b6, #ff007f);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+}
+
+/* Styles pour le conteneur */
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

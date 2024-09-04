@@ -26,19 +26,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!-- Formulaire d'inscription -->
-<form action="signup.php" method="POST">
-    <label for="username">Nom d'utilisateur:</label>
-    <input type="text" id="username" name="username" required>
-    <br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <br>
-    <label for="mdp">Mot de passe:</label>
-    <input type="mdp" id="mdp" name="mdp" required>
-    <br><br>
-    <label for="mdp">Mot de passe:</label>
-    <input type="mdp" id="mdp" name="mdp" required>
-    <br>
-    <button type="submit">S'inscrire</button>
-</form>
+
+<?php
+// Inclut l'en-tête du document, avec les balises <head> et les styles CSS
+include "includes/_head.php";
+?>
+
+<body>
+
+    <?php
+    // Inclut la barre de navigation fixe
+    include "includes/_nav.php";
+    ?>
+
+
+
+    <!-- Formulaire d'inscription HTML -->
+    <!-- Container principal pour centrer le contenu -->
+    <!-- Inclusion de la carte d'inscription -->
+    <div class="container-center">
+        <div class="card signup-card">
+            <!-- Titre de la carte -->
+            <h5 class="card-title">Inscription</h5>
+            <!-- Formulaire d'inscription -->
+            <form class="signup-form">
+                <label for="new-username">Nom d'utilisateur</label>
+                <input type="text" id="new-username" name="new-username" placeholder="Entrez votre nom d'utilisateur">
+                <label for="new-password">Mot de passe</label>
+                <input type="password" id="new-password" name="new-password" placeholder="Entrez votre mot de passe">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email">
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </div>
