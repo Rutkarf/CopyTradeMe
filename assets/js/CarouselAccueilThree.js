@@ -12,10 +12,9 @@ function createThreeJSScene(canvasId, stlFilePath) {
     console.error(`Canvas with ID ${canvasId} not found.`);
     return;
   }
-  console.log(`Creating scene for canvas ${canvasId} with STL file ${stlFilePath}`);
-  
-  // Rest of the code...
-
+  console.log(
+    `Creating scene for canvas ${canvasId} with STL file ${stlFilePath}`
+  );
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   renderer.setSize(canvas.clientWidth, canvas.clientHeight);
@@ -88,9 +87,15 @@ function createThreeJSScene(canvasId, stlFilePath) {
 
 // Initialise les scènes pour chaque canvas
 window.addEventListener("load", () => {
-  createThreeJSScene("carouselCanvas1", "./assets/picture/W40k.stl");
+  createThreeJSScene("carouselCanvas1", "./assets/picture/Drake.stl");
   createThreeJSScene("carouselCanvas2", "./assets/picture/W40k.stl");
-  createThreeJSScene("carouselCanvas3", "./assets/picture/W40k.stl");
+  createThreeJSScene("carouselCanvas3", "./assets/picture/Skull.stl");
+  createThreeJSScene("carouselCanvas4", "./assets/picture/aaaaaa.stl");
+  createThreeJSScene("carouselCanvas5", "./assets/picture/bbbbbb.stl");
+  createThreeJSScene("carouselCanvas6", "./assets/picture/head.stl");
+  createThreeJSScene("carouselCanvas7", "./assets/picture/FragGrenade.stl");
+  createThreeJSScene("carouselCanvas8", "./assets/picture/KSR-29.stl");
+  createThreeJSScene("carouselCanvas9", "./assets/picture/611LogoSTL.stl");
 });
 
 // Fonction pour charger le modèle en fonction de la vignette sélectionnée
@@ -99,12 +104,24 @@ function loadModelForThumbnail(modelIndex) {
     document.getElementById("carouselCanvas1"),
     document.getElementById("carouselCanvas2"),
     document.getElementById("carouselCanvas3"),
+    document.getElementById("carouselCanvas4"),
+    document.getElementById("carouselCanvas5"),
+    document.getElementById("carouselCanvas6"),
+    document.getElementById("carouselCanvas7"),
+    document.getElementById("carouselCanvas8"),
+    document.getElementById("carouselCanvas9"),
   ];
 
   const modelUrls = [
+    "./assets/picture/Drake.stl",
     "./assets/picture/W40k.stl",
-    "./assets/picture/W40k.stl",
-    "./assets/picture/W40k.stl",
+    "./assets/picture/Skull.stl",
+    "./assets/picture/Model4.stl",
+    "./assets/picture/Model5.stl",
+    "./assets/picture/Model6.stl",
+    "./assets/picture/Model7.stl",
+    "./assets/picture/Model8.stl",
+    "./assets/picture/Model9.stl",
   ];
 
   if (canvases[modelIndex]) {
@@ -121,7 +138,7 @@ document.querySelectorAll(".thumbnail").forEach((thumbnail, index) => {
 
 // Fonction pour créer un modèle .stl et le capturer en tant qu'image
 function createThumbnail(stlFilePath, callback) {
-  const canvas = document.createElement('canvas');
+  const canvas = document.createElement("canvas");
   canvas.width = canvasSize;
   canvas.height = canvasSize;
   const renderer = new THREE.WebGLRenderer({ canvas });
@@ -140,32 +157,40 @@ function createThumbnail(stlFilePath, callback) {
 
   console.log(`Creating thumbnail for STL file ${stlFilePath}`);
 
-  loader.load(stlFilePath, (geometry) => {
-    console.log(`Loaded geometry for thumbnail from ${stlFilePath}`);
-    
-    const material = new THREE.MeshStandardMaterial({ color: 0x0077ff });
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.scale.set(1, 1, 1); // Ajustez la taille du modèle pour la miniature
-    mesh.position.set(0, 0, 0);
-    scene.add(mesh);
+  loader.load(
+    stlFilePath,
+    (geometry) => {
+      console.log(`Loaded geometry for thumbnail from ${stlFilePath}`);
 
-    // Effectuer une légère rotation pour une vue complète
-    function animate() {
-      requestAnimationFrame(animate);
-      mesh.rotation.y += 0.01; // Rotation pour la prévisualisation
-      renderer.render(scene, camera);
+      const material = new THREE.MeshStandardMaterial({ color: 0x0077ff });
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.scale.set(1, 1, 1); // Ajustez la taille du modèle pour la miniature
+      mesh.position.set(0, 0, 0);
+      scene.add(mesh);
+
+      // Effectuer une légère rotation pour une vue complète
+      function animate() {
+        requestAnimationFrame(animate);
+        mesh.rotation.y += 0.01; // Rotation pour la prévisualisation
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Capture l'image du canvas
+      setTimeout(() => {
+        const dataUrl = canvas.toDataURL("image/png");
+        console.log(`Thumbnail created with data URL: ${dataUrl}`);
+        callback(dataUrl);
+      }, 1000); // Attendre un moment pour s'assurer que le modèle est rendu
+    },
+    undefined,
+    (error) => {
+      console.error(
+        `Error loading STL file for thumbnail ${stlFilePath}:`,
+        error
+      );
     }
-    animate();
-
-    // Capture l'image du canvas
-    setTimeout(() => {
-      const dataUrl = canvas.toDataURL('image/png');
-      console.log(`Thumbnail created with data URL: ${dataUrl}`);
-      callback(dataUrl);
-    }, 1000); // Attendre un moment pour s'assurer que le modèle est rendu
-  }, undefined, (error) => {
-    console.error(`Error loading STL file for thumbnail ${stlFilePath}:`, error);
-  });
+  );
 }
 
 // Appel de la fonction pour chaque modèle
@@ -182,4 +207,3 @@ document.querySelectorAll(".thumbnail").forEach((thumbnail, index) => {
     loadModelForThumbnail(index);
   });
 });
-

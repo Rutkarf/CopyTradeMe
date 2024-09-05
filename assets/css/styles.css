@@ -14,6 +14,27 @@ body {
   background-color: Black;
 }
 
+
+.main-columns {
+  display: flex;
+  flex-direction: row; /* Aligne les éléments en ligne, créant ainsi des colonnes */
+  justify-content: space-between; /* Espace égal entre les colonnes */
+  gap: 20px; /* Espacement entre les colonnes */
+  padding: 10px; /* Ajuste les marges internes */
+  margin: 0 auto; /* Centre le contenu si nécessaire */
+}
+
+.main-columns > * {
+  flex: 1 !important; /* Chaque colonne prend une part égale de la largeur */
+  padding: 10px; /* Espace interne pour chaque colonne */
+}
+
+/* Si vous souhaitez des bordures pour visualiser les colonnes (facultatif) */
+.main-columns > * {
+  border: 1px solid #ccc; /* Bordure grise pour chaque colonne */
+}
+
+
 /* Styles généraux pour h1 et h4 */
 h1, h4 {
   font-family: 'Orbitron', sans-serif; /* Font futuriste */

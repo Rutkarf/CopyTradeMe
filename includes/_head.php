@@ -13,7 +13,7 @@
      <script type="module" src="http://localhost:5173/assets/js/CarouselAccueilThree.js"></script>
      <script type="module" src="http://localhost:5173/assets/js/CarouselAccueilThree.js"></script>
      <script type="module" src="http://localhost:5173/assets/js/PresentationBmbThree.js"></script>
-     
+     <script type="module" src="http://localhost:5173/assets/js/NaviguationHOF.js"></script>
      
      <!-- Lien vers les fichier Css -->
      <link href="/CopyTradeMe/assets/css/styles.css" rel="stylesheet">

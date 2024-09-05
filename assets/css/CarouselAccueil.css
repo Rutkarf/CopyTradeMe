@@ -1,5 +1,7 @@
 /* assets/css/CarouselAccueil.css */
 
+/* assets/css/CarouselAccueil.css */
+
 /* Container principal du carousel et des miniatures */
 .card-carousel-wrapper {
   display: flex;
@@ -27,7 +29,7 @@
   align-items: center; /* Centre les éléments enfants */
   justify-content: center;
   width: 100%;
-  height: auto; /* Ajuster automatiquement en fonction du contenu */
+  height: 100%; /* Ajuster automatiquement en fonction du contenu */
   background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
   backdrop-filter: blur(10px); /* Flou d'arrière-plan pour glassmorphism */
   border-radius: 15px; /* Coins arrondis */
@@ -39,21 +41,23 @@
 /* Inner Carousel */
 .carousel-inner {
   display: flex;
+  transition: transform 0.5s ease;
   width: 100%;
-  height: auto; /* Ajuster automatiquement en fonction du contenu */
+  height: 100%; /* Remplir la hauteur du conteneur parent */
 }
 
 .carousel-item {
+  
+  min-width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
 }
 
 .carousel-item canvas {
   max-width: 100%; /* Limiter la largeur du canvas à celle du parent */
-  max-height: 80vh; /* Ajuster la hauteur maximale pour meilleure visibilité */
+  max-height: auto; /* Ajuster la hauteur maximale pour meilleure visibilité */
   border: 2px solid #00ff99; /* Bordure néon */
   box-shadow: 0 0 10px #00ff99; /* Ombre néon pour canvas */
 }
@@ -68,7 +72,6 @@
   border-radius: 15px;
 }
 
-/* Section des miniatures */
 /* Section des miniatures */
 .card-thumbnail-container {
   flex-shrink: 0; /* Empêche la réduction des cartes */
@@ -89,7 +92,6 @@
   border-radius: 15px; /* Coins arrondis */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure semi-transparente */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
-    /* Ajustements pour s'adapter à la taille des miniatures */
   width: fit-content; /* Ajuste la largeur au contenu */
   height: fit-content; /* Ajuste la hauteur au contenu */
 }
@@ -103,6 +105,7 @@
   border: none !important; /* Supprime la bordure */
   background: transparent !important; /* Si un fond est défini, le rendre transparent */
 }
+
 .card-thumbnail-card {
   margin: 0; /* Supprimer la marge autour des cartes */
   padding: 0; /* Supprimer le padding autour des cartes */
@@ -114,9 +117,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée pour les cartes */
   border-radius: 10px; /* Coins arrondis */
   transition: transform 0.3s, box-shadow 0.3s; /* Transition pour effet de survol */
-    /* Ajustements pour s'adapter à la taille des miniatures */
-    width: fit-content; /* Ajuste la largeur au contenu */
-    height: fit-content; /* Ajuste la hauteur au contenu */
+  width: fit-content; /* Ajuste la largeur au contenu */
+  height: fit-content; /* Ajuste la hauteur au contenu */
 }
 
 .card-thumbnail-card:hover {
@@ -132,7 +134,6 @@
   cursor: pointer;
   border: 2px solid transparent;
   transition: border 0.3s, transform 0.3s; /* Transition pour effet de survol */
-  
 }
 
 .thumbnail.active {
@@ -140,4 +141,70 @@
   transform: scale(1.1); /* Agrandissement pour la vignette active */
 }
 
+/* Ajout des règles spécifiques pour le défilement */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Ajustez selon vos besoins */
+  overflow: hidden;
+}
 
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 33.33%; /* Affiche 3 slides à la fois */
+  height: 100%;
+}
+
+.carousel-item canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnail-container {
+  display: flex;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.thumbnail-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.thumbnail-card {
+  flex: 0 0 33.33%; /* Affiche 3 vignettes à la fois */
+  padding: 5px;
+}
+
+.thumbnail-card img {
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.thumbnail-card img:hover {
+  border-color: #007bff;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.nav-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+}

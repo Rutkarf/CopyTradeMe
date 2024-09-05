@@ -12,8 +12,8 @@ include "includes/_head.php";
     ?>
 
 
-    <main>
-        
+    <main class="main-columns">
+
         <?php include "includes/_accueilTitre.php";    ?>
 
         <?php include "includes/_accueilHOF.php";   ?>
