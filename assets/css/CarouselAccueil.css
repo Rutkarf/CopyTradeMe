@@ -89,9 +89,20 @@
   border-radius: 15px; /* Coins arrondis */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure semi-transparente */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
+    /* Ajustements pour s'adapter à la taille des miniatures */
+  width: fit-content; /* Ajuste la largeur au contenu */
+  height: fit-content; /* Ajuste la hauteur au contenu */
 }
 
-
+/* Styles spécifiques pour ajuster les cartes dans le conteneur des miniatures */
+.carousel-thumbnail-container .card {
+  min-height: auto !important; /* Enlève toute hauteur minimale */
+  padding: 2px !important; /* Réduit le padding à 2px */
+  margin: 2px !important; /* Réduit la marge à 2px */
+  box-shadow: none !important; /* Supprime toute ombre */
+  border: none !important; /* Supprime la bordure */
+  background: transparent !important; /* Si un fond est défini, le rendre transparent */
+}
 .card-thumbnail-card {
   margin: 0; /* Supprimer la marge autour des cartes */
   padding: 0; /* Supprimer le padding autour des cartes */
@@ -103,6 +114,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée pour les cartes */
   border-radius: 10px; /* Coins arrondis */
   transition: transform 0.3s, box-shadow 0.3s; /* Transition pour effet de survol */
+    /* Ajustements pour s'adapter à la taille des miniatures */
+    width: fit-content; /* Ajuste la largeur au contenu */
+    height: fit-content; /* Ajuste la hauteur au contenu */
 }
 
 .card-thumbnail-card:hover {
@@ -118,6 +132,7 @@
   cursor: pointer;
   border: 2px solid transparent;
   transition: border 0.3s, transform 0.3s; /* Transition pour effet de survol */
+  
 }
 
 .thumbnail.active {

@@ -10,23 +10,17 @@ include "includes/_head.php";
     // Inclut la barre de navigation fixe
     include "includes/_nav.php";
     ?>
-    
+
+
     <main>
+        
+        <?php include "includes/_accueilTitre.php";    ?>
 
+        <?php include "includes/_accueilHOF.php";   ?>
 
-    <?php
-include "includes/_accueilTitre.php";
-     ?>
+        <?php include "includes/_BmbPresentation.php";?>
 
-
-<?php
-include "includes/_accueilHOF.php";
-?>
-    
-    <?php
-include "includes/_BmbPresentation.php";
-?>  
-    </main> 
+    </main>
 
     <?php
     // Inclut le pied de page fixe
