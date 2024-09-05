@@ -10,6 +10,7 @@
 
 
      <!-- Lien vers les fichier Javascript module -->
+     <script type="module" src="http://localhost:5173/assets/js/BGparticules.js"></script>
      <script type="module" src="http://localhost:5173/assets/js/CarouselAccueilThree.js"></script>
      <script type="module" src="http://localhost:5173/assets/js/CarouselAccueilThree.js"></script>
      <script type="module" src="http://localhost:5173/assets/js/PresentationBmbThree.js"></script>
