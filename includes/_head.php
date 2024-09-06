@@ -12,9 +12,10 @@
      <!-- Lien vers les fichier Javascript module -->
      <script type="module" src="http://localhost:5173/assets/js/BGparticules.js"></script>
      <script type="module" src="http://localhost:5173/assets/js/SlotEffectColomn.js"></script>
-     <script type="module" src="http://localhost:5173/assets/js/CarouselAccueilThree.js"></script>     
+     <script type="module" src="http://localhost:5173/assets/js/CarouselAccueilThree.js"></script> 
+     <script type="module" src="http://localhost:5173/assets/js/NaviguationHOF.js"></script>    
      <script type="module" src="http://localhost:5173/assets/js/PresentationBmbThree.js"></script>
-     <script type="module" src="http://localhost:5173/assets/js/NaviguationHOF.js"></script>
+     
      
      <!-- Lien vers les fichier Css -->
      <link href="/CopyTradeMe/assets/css/styles.css" rel="stylesheet">

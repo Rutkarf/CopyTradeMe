@@ -1,25 +1,23 @@
-
 /* Style de base pour le main et les colonnes */
 main.main-columns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 20px;
+  gap: 20px; /* Espacement entre les colonnes */
   padding: 10px;
   height: 100vh; /* Hauteur totale de la fenêtre */
   margin: 0 auto;
 }
 
-/* Style des colonnes */
-/* Style des colonnes */
-.column {
-  flex: 1;
+/* Colonne 1 - _accueilTitre.php avec effet de défilement (20% de la largeur) */
+.slot-column {
+  flex: 0 0 20%; /* La colonne prend 20% de l'espace disponible */
   overflow: hidden; /* Cache le contenu qui dépasse */
   display: flex;
   justify-content: center; /* Centre le contenu horizontalement */
   align-items: center; /* Centre le contenu verticalement */
-  height:100vh; /* Ajuste la hauteur selon les besoins */
-  margin-top: -60px; /* Compense la réduction de height en haut */
+  height: 100vh ; /* Ajuste la hauteur en prenant en compte l'espace en haut et en bas */
+
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légèrement translucide pour l'effet glassmorphism */
   padding: 20px; /* Padding interne des colonnes */
@@ -27,34 +25,62 @@ main.main-columns {
   margin: 10px; /* Marge autour des colonnes */
 }
 
-/* Conteneur pour le contenu défilant */
+/* Conteneur pour le contenu défilant de la colonne _accueilTitre.php */
 .scroll-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%; /* Prend toute la largeur de la colonne */
-    height: 100%; /* Prend toute la hauteur de la colonne */
-    animation: scrollUp 3s linear infinite; /* Défilement rapide */
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Prend toute la largeur de la colonne */
+  height: 100%; /* Prend toute la hauteur de la colonne */
+  animation: scrollUp 0.5s linear infinite; /* Animation rapide pour le défilement */
+  will-change: transform; /* Optimisation pour le navigateur */
+}
+
+/* Animation de défilement */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
   }
-  
-  /* Style des éléments à l'intérieur des colonnes */
-  .slot-item {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ff007c;
-    text-align: center;
-    padding: 10px 0;
-    user-select: none;
-    width: 100%; /* Assure que l'élément occupe toute la largeur de son conteneur */
-    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+  100% {
+    transform: translateY(-100%); /* Défilement complet vers le haut */
   }
-  
-  /* Animation de défilement */
-  @keyframes scrollUp {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-100%); /* Défilement complet vers le haut */
-    }
-  }
-  
+}
+
+/* Colonne 2 - _accueilHOF.php (55% de la largeur) */
+.hof-column {
+  flex: 0 0 55%; /* La colonne prend 55% de l'espace disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légèrement translucide */
+  padding: 20px; /* Padding interne des colonnes */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur/hauteur */
+  margin: 10px; /* Marge autour des colonnes */
+}
+
+/* Colonne 3 - _BmbPresentation.php (25% de la largeur) */
+.bmb-column {
+  flex: 0 0 25%; /* La colonne prend 25% de l'espace disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légèrement translucide */
+  padding: 20px; /* Padding interne des colonnes */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur/hauteur */
+  margin: 10px; /* Marge autour des colonnes */
+}
+
+/* Style des éléments à l'intérieur des colonnes */
+.slot-item {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff007c;
+  text-align: center;
+  padding: 10px 0;
+  user-select: none;
+  width: 100%; /* Assure que l'élément occupe toute la largeur de son conteneur */
+  box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+}
