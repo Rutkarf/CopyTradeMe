@@ -110,6 +110,7 @@
 .animated-text-card {
   color: #00e0ff; /* Couleur de base */
   font-size: 1.2rem;
+  margin:auto;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -145,7 +146,7 @@
 /* Carte pour la flèche avec animation */
 .animated-text-flash-card {
   position: relative; /* Nécessaire pour que le positionnement relatif de ::after fonctionne */
-  height: 1.2rem; /* Ajuste selon la taille souhaitée */
+  /* height: 1.2rem; Ajuste selon la taille souhaitée */
 }
 
 /* Carte pour l'effet néon et animation de balancement de la flèche */
