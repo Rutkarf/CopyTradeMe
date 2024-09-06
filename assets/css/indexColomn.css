@@ -33,7 +33,7 @@ main.main-columns {
     flex-direction: column;
     width: 100%; /* Prend toute la largeur de la colonne */
     height: 100%; /* Prend toute la hauteur de la colonne */
-    animation: scrollUp 1s linear infinite; /* Défilement rapide */
+    animation: scrollUp 3s linear infinite; /* Défilement rapide */
   }
   
   /* Style des éléments à l'intérieur des colonnes */
