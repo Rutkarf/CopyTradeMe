@@ -8,11 +8,11 @@ Styles pour le footer */
   justify-content: space-between; /* Espacement égal entre les éléments */
   align-items: center; /* Aligne les éléments verticalement */
   height: 2px; /* Hauteur du footer */
-  position: fixed; /* Fixe le footer au bas de la page */
+  /* position: fixed; Fixe le footer au bas de la page */
   bottom: 0;
   width: 100%;
-  z-index: 1000;
-  overflow: hidden;
+  z-index: 2;
+  /* overflow: hidden; */
   color: #fd5794; /* Couleur du texte */
 }
 

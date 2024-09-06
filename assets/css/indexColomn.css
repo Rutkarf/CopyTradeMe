@@ -1,0 +1,60 @@
+
+/* Style de base pour le main et les colonnes */
+main.main-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px;
+  height: 100vh; /* Hauteur totale de la fenêtre */
+  margin: 0 auto;
+}
+
+/* Style des colonnes */
+/* Style des colonnes */
+.column {
+  flex: 1;
+  overflow: hidden; /* Cache le contenu qui dépasse */
+  display: flex;
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: center; /* Centre le contenu verticalement */
+  height:100vh; /* Ajuste la hauteur selon les besoins */
+  margin-top: -60px; /* Compense la réduction de height en haut */
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légèrement translucide pour l'effet glassmorphism */
+  padding: 20px; /* Padding interne des colonnes */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur/hauteur */
+  margin: 10px; /* Marge autour des colonnes */
+}
+
+/* Conteneur pour le contenu défilant */
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Prend toute la largeur de la colonne */
+    height: 100%; /* Prend toute la hauteur de la colonne */
+    animation: scrollUp 1s linear infinite; /* Défilement rapide */
+  }
+  
+  /* Style des éléments à l'intérieur des colonnes */
+  .slot-item {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff007c;
+    text-align: center;
+    padding: 10px 0;
+    user-select: none;
+    width: 100%; /* Assure que l'élément occupe toute la largeur de son conteneur */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+  }
+  
+  /* Animation de défilement */
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%); /* Défilement complet vers le haut */
+    }
+  }
+  

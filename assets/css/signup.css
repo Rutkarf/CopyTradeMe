@@ -122,7 +122,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     animation: form-appear 1.5s ease-in-out, glow-border 5s infinite alternate;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* Effets sur les labels */
@@ -172,12 +172,12 @@
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), inset 0 0 10px rgba(0, 255, 255, 0.5);
     animation: button-pulse 1.5s infinite;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .signup-form button::before {
     content: '';
-    position: absolute;
+    /* position: absolute; */
     top: -50%;
     left: -50%;
     width: 200%;
@@ -216,7 +216,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: auto;
 }
 
 /* Styles pour le menu déroulant des rôles */
@@ -254,7 +254,7 @@
 /* Pour styliser la flèche du menu déroulant */
 .custom-select::after {
     content: '▼';
-    position: absolute;
+    /* position: absolute; */
     top: 50%;
     right: 15px;
     transform: translateY(-50%);

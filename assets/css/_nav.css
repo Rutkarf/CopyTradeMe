@@ -5,34 +5,80 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
   background-color: #262626;
   border-bottom: 3px solid #00e0ff;
-  height: 7%; /* Hauteur fixée */
   position: fixed; /* Fixée en haut de l'écran */
-  top: 0; /* Fixée en haut de l'écran */
+  top: 0;
   width: 100%; /* Prend toute la largeur de l'écran */
-  z-index: 1000; /* Au-dessus des autres éléments */
+  z-index: 2; /* Au-dessus des autres éléments */
+  height: 60px; /* Ajuste la hauteur si nécessaire */
+  padding: 0 20px; /* Ajoute du padding pour ajuster l'espacement */
 }
 
-/* Carte pour le contenu de la barre de navigation */
+/* Conteneur principal de la barre de navigation */
 .navbar-content-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center; /* Centre verticalement tous les enfants */
+  justify-content: space-between; /* Sépare les éléments horizontalement */
   width: 100%;
-  max-width: 1200px; /* Limite la largeur maximale pour mieux centrer le contenu */
+  max-width: 1200px; /* Limite la largeur maximale pour centrer le contenu */
   margin: 0 auto; /* Centre horizontalement */
   padding: 0 20px; /* Ajoute du padding pour ne pas coller les bords */
 }
 
-/* Carte pour la marque de la barre de navigation */
-.navbar-brand-card {
-  color: #ff007c;
-  font-size: 1.2rem;
-  font-weight: bolder;
+/* Style du texte pour alignement horizontal */
+.animated-text-card {
+  color: #00e0ff;
+  font-size: 1.2rem; /* Ajuste la taille si nécessaire */
+  font-weight: bold;
   text-transform: uppercase;
-  transition: color 0.3s ease-in-out;
+  letter-spacing: 1px;
+  display: flex; /* Utilise Flexbox pour un alignement interne */
+  align-items: center; /* Centre verticalement le texte */
+  line-height: 1; /* Ajuste le line-height pour centrer parfaitement */
+  white-space: nowrap; /* Empêche le texte de se décomposer sur plusieurs lignes */
+  margin: 0 10px; /* Espacement horizontal autour du texte */
+}
+
+/* Carte pour le texte animé avec effets */
+.animated-text-card {
+  color: #00e0ff; /* Couleur de base */
+  font-size: 1rem;
+  margin: auto;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  line-height: 1.5rem; /* Ajuste pour aligner verticalement */
+  animation: swing 2s ease-in-out infinite,
+    neonGlow 1.5s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center; /* Centre verticalement à l'intérieur de l'élément */
+}
+
+/* Animation de balancement */
+@keyframes swing {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px); /* Balance le texte de 10px à droite */
+  }
+}
+
+/* Effet néon clignotant */
+@keyframes neonGlow {
+  0% {
+    text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff, 0 0 15px #00e0ff,
+      0 0 20px #ff007c, 0 0 30px #ff007c, 0 0 40px #ff007c, 0 0 55px #ff007c;
+    color: #00e0ff;
+  }
+  100% {
+    text-shadow: 0 0 10px #ff007c, 0 0 20px #ff007c, 0 0 30px #ff007c,
+      0 0 40px #ff007c, 0 0 55px #00e0ff, 0 0 75px #00e0ff;
+    color: #ff007c;
+  }
 }
 
 /* Carte pour les icônes de réseaux sociaux */
@@ -52,6 +98,12 @@
   text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
 }
 
+/* Effet de survol pour les liens sociaux */
+.social-link-card:hover {
+  color: #ff007c;
+  transform: scale(1.1); /* Réduit l'échelle de zoom au survol */
+}
+
 /* Carte pour les boutons de la barre de navigation */
 .navbar-buttons-card {
   display: flex;
@@ -60,13 +112,6 @@
   gap: 10px; /* Espacement entre les boutons */
 }
 
-/* Effet de survol pour les liens sociaux */
-.social-link-card:hover {
-  color: #ff007c;
-  transform: scale(1.1); /* Réduit l'échelle de zoom au survol */
-}
-
-/* Carte pour le bouton avec effet néon */
 /* Carte pour le bouton avec effet néon */
 .button-card {
   font-family: "Orbitron", sans-serif;
@@ -78,7 +123,6 @@
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
   transition: all 0.3s ease;
 }
 
@@ -106,62 +150,26 @@
   border: 2px solid #e6007e;
 }
 
-/* Carte pour l'effet néon et animation de balancement */
-.animated-text-card {
-  color: #00e0ff; /* Couleur de base */
-  font-size: 1.2rem;
-  margin:auto;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  animation: swing 2s ease-in-out infinite,
-    neonGlow 1.5s ease-in-out infinite alternate;
-}
-
-/* Animation de balancement */
-@keyframes swing {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px); /* Balance le texte de 10px à droite */
-  }
-}
-
-/* Effet néon clignotant */
-@keyframes neonGlow {
-  0% {
-    text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff, 0 0 15px #00e0ff,
-      0 0 20px #ff007c, 0 0 30px #ff007c, 0 0 40px #ff007c, 0 0 55px #ff007c;
-    color: #00e0ff;
-  }
-  100% {
-    text-shadow: 0 0 10px #ff007c, 0 0 20px #ff007c, 0 0 30px #ff007c,
-      0 0 40px #ff007c, 0 0 55px #00e0ff, 0 0 75px #00e0ff;
-    color: #ff007c;
-  }
-}
-
 /* Carte pour la flèche avec animation */
 .animated-text-flash-card {
   position: relative; /* Nécessaire pour que le positionnement relatif de ::after fonctionne */
-  /* height: 1.2rem; Ajuste selon la taille souhaitée */
 }
 
 /* Carte pour l'effet néon et animation de balancement de la flèche */
 .animated-text-flash-card::after {
-  position: absolute; /* Positionnement absolu par rapport à .animated-text */
   color: #ff007c; /* Couleur de la flèche */
   right: 0; /* Positionne la flèche à droite du conteneur parent */
   top: 50%; /* Centrage vertical */
-  transform: translateY(-50%); /* Ajustement pour centrer parfaitement verticalement */
+  transform: translateY(
+    -50%
+  ); /* Ajustement pour centrer parfaitement verticalement */
   animation: blink 1.5s step-start infinite, swing 2s ease-in-out infinite; /* Animations */
 }
 
 /* Animation de clignotement */
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -169,20 +177,9 @@
   }
 }
 
-/* Animation de balancement */
-@keyframes swing {
-  0%, 100% {
-    transform: translateX(0) translateY(-50%);
-  }
-  50% {
-    transform: translateX(10px) translateY(-50%); /* Balance la flèche de 10px à droite */
-  }
-}
-
 /* Effet néon clignotant pour les flèches */
 .animated-text-flash-card::before,
 .animated-text-flash-card::after {
   color: #ff007c;
-  position: absolute;
   animation: blink 1.5s step-start infinite;
 }

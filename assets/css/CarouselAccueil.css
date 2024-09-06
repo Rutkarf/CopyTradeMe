@@ -9,13 +9,13 @@
   align-items: center;
   justify-content: center; /* Centrer le contenu verticalement */
   height: auto; /* Ajuster la hauteur automatiquement */
-  min-height: 80vh; /* Hauteur minimale pour le conteneur */
+  min-height: auto; /* Hauteur minimale pour le conteneur */
   margin-top: 60px; /* Ajuster pour la hauteur de la navbar */
   background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
   backdrop-filter: blur(10px); /* Flou d'arrière-plan pour glassmorphism */
   border-radius: 15px; /* Coins arrondis */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure semi-transparente */
-  overflow: hidden; /* Empêche le débordement */
+  /* overflow: hidden; Empêche le débordement */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
   width: 90%; /* Ajuster la largeur pour centrer */
   max-width: 1200px; /* Limiter la largeur maximale */
@@ -34,7 +34,7 @@
   backdrop-filter: blur(10px); /* Flou d'arrière-plan pour glassmorphism */
   border-radius: 15px; /* Coins arrondis */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure semi-transparente */
-  overflow: hidden; /* Empêche le débordement */
+  /* overflow: hidden; Empêche le débordement */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre portée */
 }
 
@@ -192,7 +192,7 @@
 }
 
 .carousel-controls {
-  position: absolute;
+  /* position: absolute; */
   top: 50%;
   width: 100%;
   display: flex;
@@ -206,5 +206,5 @@
   color: white;
   padding: 10px;
   cursor: pointer;
-  z-index: 100;
+  z-index: 3;
 }

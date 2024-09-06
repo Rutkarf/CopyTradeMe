@@ -12,15 +12,28 @@ include "includes/_head.php";
     ?>
 
 
-    <main class="main-columns">
+<main class="main-columns">
+  <div class="column slot-column">
+    <div class="scroll-container">
+      <!-- Contenu répété pour le défilement -->
+      <?php include "includes/_accueilTitre.php"; ?>
+      <?php include "includes/_accueilTitre.php"; ?> <!-- Répétez pour une animation fluide -->
+    </div>
+  </div>
+  <div class="column slot-column">
+    <div class="scroll-container">
+      <?php include "includes/_accueilHOF.php"; ?>
+      <?php include "includes/_accueilHOF.php"; ?> <!-- Répétez pour une animation fluide -->
+    </div>
+  </div>
+  <div class="column slot-column">
+    <div class="scroll-container">
+      <?php include "includes/_BmbPresentation.php"; ?>
+      <?php include "includes/_BmbPresentation.php"; ?> <!-- Répétez pour une animation fluide -->
+    </div>
+  </div>
+</main>
 
-        <?php include "includes/_accueilTitre.php";    ?>
-
-        <?php include "includes/_accueilHOF.php";   ?>
-
-        <?php include "includes/_BmbPresentation.php";?>
-
-    </main>
 
     <?php
     // Inclut le pied de page fixe

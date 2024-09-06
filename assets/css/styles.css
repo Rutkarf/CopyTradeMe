@@ -8,12 +8,24 @@
 }
 
 body {
-  margin: 3vh;
-  padding: 1vh;
+  overflow: auto;
+  position: relative;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
   box-sizing: border-box;
   background-color: Black;
 }
 
+body,
+html {
+  overflow: auto !important; /* Permet le défilement */
+}
 
 .main-columns {
   display: flex;
@@ -34,10 +46,10 @@ body {
   border: 1px solid #ccc; /* Bordure grise pour chaque colonne */
 }
 
-
 /* Styles généraux pour h1 et h4 */
-h1, h4 {
-  font-family: 'Orbitron', sans-serif; /* Font futuriste */
+h1,
+h4 {
+  font-family: "Orbitron", sans-serif; /* Font futuriste */
   text-align: center;
   margin: 10px 0;
   color: #ffffff; /* Couleur de texte blanche par défaut */
@@ -47,7 +59,8 @@ h1, h4 {
 .card-title h1 {
   font-size: 2rem;
   font-weight: bold;
-  text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99; /* Effet néon */
+  text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99,
+    0 0 40px #00ff99; /* Effet néon */
   background: rgba(0, 0, 0, 0.4); /* Fond semi-transparent pour glassmorphism */
   backdrop-filter: blur(15px); /* Flou d'arrière-plan pour glassmorphism */
   border-radius: 10px; /* Coins arrondis */
@@ -86,8 +99,10 @@ h1, h4 {
 }
 
 /* Optionnel : Styles pour centrer le texte */
-h1, h4, h5 {
-  font-family: 'Orbitron', sans-serif; /* Font futuriste */
+h1,
+h4,
+h5 {
+  font-family: "Orbitron", sans-serif; /* Font futuriste */
   text-align: center;
   margin: 10px 0;
   color: #ffffff; /* Couleur de texte blanche par défaut */
@@ -121,7 +136,8 @@ h1, h4, h5 {
 }
 
 .neon-text {
-  text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 15px #00ff99, 0 0 20px #00ff99, 0 0 25px #00ff99;
+  text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 15px #00ff99,
+    0 0 20px #00ff99, 0 0 25px #00ff99;
   font-family: "Orbitron", sans-serif;
 }
 
@@ -129,15 +145,18 @@ h1, h4, h5 {
 @keyframes pulse {
   0% {
     transform: scale(1);
-    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99,
+      0 0 40px #00ff99;
   }
   50% {
     transform: scale(1.05);
-    text-shadow: 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99, 0 0 50px #00ff99;
+    text-shadow: 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99,
+      0 0 50px #00ff99;
   }
   100% {
     transform: scale(1);
-    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99, 0 0 40px #00ff99;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99,
+      0 0 40px #00ff99;
   }
 }
 

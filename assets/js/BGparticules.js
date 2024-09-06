@@ -21,7 +21,7 @@ function createParticlesBackground() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setClearColor(0x000000, 0);
-  container.style.overflow = "hidden";
+  container.style.overflow = "auto";
   container.style.position = "relative";
   renderer.domElement.style.position = "fixed";
   renderer.domElement.style.top = "0";
